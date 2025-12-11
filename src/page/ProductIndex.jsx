@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
 import NavigationBar from '../componet/ProductNavigation'
 import ProductItem from '../componet/ProductItem'
+import { useSearchParams } from 'react-router-dom';
 
 // 쇼핑몰
 // 1. 전체 인덱스 페이지, 상품 상세 페이지, 로그인 페이지
@@ -17,19 +18,30 @@ import ProductItem from '../componet/ProductItem'
 
 const ProductIndex = () => {
   const [productList, setProductList] = useState([]);
+  const [query, setQuery] = useSearchParams();
 
   const getProducts = async () => {
-    let url = `http://localhost:4000/products`
+    // 기본 데이터 가져오는 방법
+    // let url = `http://localhost:4000/products`
+    // let response = await fetch(url)
+    // let data = await response.json();
+    // setProductList(data); // 데이터 넣기
+    // console.log(data)
+
+    // 검색한 쿼리값까지 가져오는 방법
+    let searchQuery = query.get('q') || ""; 
+    // console.log(searchQuery);
+    let url = `http://localhost:4000/products/?q=${searchQuery}`
     let response = await fetch(url)
     let data = await response.json();
     setProductList(data); // 데이터 넣기
-    // console.log(data)
   }
 
-  // 데이터를 가져올 때는 useEffect!
+  // 데이터를 가져올 때는 useEffect! 맨 처음에 딱 한번만 호출 되는데 검색할때마다 다시 호출 시켜야함.
+
   useEffect(() => {
     getProducts();
-  },[])
+  }, [query])
   return (
     <div className='shop-wrap'>
       <NavigationBar />

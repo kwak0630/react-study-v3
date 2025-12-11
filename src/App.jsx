@@ -19,7 +19,7 @@ function App() {
   const [authenticate, setAuthenticate] = useState(false);
 
   useEffect(() => {
-    console.log(authenticate) //로그인 ture/false 확인!!!
+    // console.log(authenticate) //로그인 ture/false 확인!!!
   },[authenticate]);
 
   // 로그인 했을 때만 보여지게 redirect

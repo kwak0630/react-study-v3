@@ -15,11 +15,11 @@ const ProductItem = ({ item }) => {
         <img src={item?.img} />
       </div>
       <div className='cont'>
-        {item?.choice && <p className="choice">CHOICE</p>}
         <p className='title'>{item?.title}</p>
         <p className='price'>{item?.price}</p>
-        <p>
-          {item?.new && <span className="new">NEW</span>}
+        <p className='chips'>
+          {item?.choice && <span className="chip">CHOICE</span>}
+          {item?.new && <span className="chip">NEW</span>}
         </p>
       </div>
     </div>
