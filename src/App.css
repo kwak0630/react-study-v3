@@ -208,7 +208,6 @@
             outline: 0;
             font-size: 13px;
           }
-          
         }
       }
       .util{
@@ -441,6 +440,94 @@
     }
   }
 }
-.zustand-wrap{
-  
+
+.phonebook-wrap{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  gap: 40px 0;
+  h1{
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+  .phonebook-box{
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    height: 70vh;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    .btn-add{
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+    }
+  }
+
+  .contact-form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* width: 400px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 16px;
+    transform: translate(-50%, -50%);
+    .form-item{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      input{
+        width: 300px;
+        padding: 12px 0;
+        flex: 1;
+        border: 0;
+        outline: 0;
+        border-bottom: 2px solid #000;
+        font-size: 13px;
+      }
+    }
+    .btn-type{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 12px;
+      background-color: #ffc107;
+      border-radius: 8px;
+      font-size: 13px;
+    }
+  }
+  .contact-list{
+
+    .search{
+      .search-input{
+        display: flex;
+        align-items: center;
+        gap: 16px;;
+        width: 300px;
+        padding: 8px 0;
+        border-bottom: 2px solid #000;
+        input{
+          flex: 1;
+          border: 0;
+          outline: 0;
+          font-size: 13px;
+        }
+      }
+    }
+  }
 }

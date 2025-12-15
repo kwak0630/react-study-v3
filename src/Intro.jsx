@@ -26,6 +26,7 @@ const Intro = () => {
           Chapter 2. 날씨 앱
         </button>
         <Link to="/Product">Chapter 3. 쇼핑몰</Link>
+        <Link to="/PhoneBook">Chapter 4. 연락처</Link>
       </div>
       <p className="copy">@sally</p>
     </div>

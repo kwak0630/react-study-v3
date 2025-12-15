@@ -8,6 +8,7 @@ import ProductIndex from "./page/ProductIndex";
 import ProductDetail from "./page/ProductDetail";
 import Login from "./page/Login";
 import PrivateRoute from "./routes/PrivateRoute"
+import PhoneBook from "./page/PhoneBook";
 
 import ProductPage from "./productPage";
 import ProductDetailPage from "./productDetailPage";
@@ -20,7 +21,7 @@ function App() {
   const [authenticate, setAuthenticate] = useState(false);
 
   useEffect(() => {
-    console.log("authenticate", authenticate) //로그인 ture/false 확인!!!
+    // console.log("authenticate", authenticate) //로그인 ture/false 확인!!!
   },[authenticate]);
 
   // 로그인 했을 때만 보여지게 redirect
@@ -37,14 +38,17 @@ function App() {
       <Route path="/Product" element={<ProductIndex authenticate={authenticate} setAuthenticate={setAuthenticate} />} />
       <Route path="/Product/:id" element={<PrivateRoute authenticate={authenticate} />} />
       <Route path="/Login" element={<Login setAuthenticate={setAuthenticate} />} />
+      <Route path="/PhoneBook" element={<PhoneBook />} />
 
-      <Route path="/ZustandCount" element={<ZustandCount />} />
+      
       {/* 이 아래는 테스트 라우터!
       <Route path="/Product" element={<ProductPage />} />
       <Route path="/Product/:id" element={<ProductDetailPage />} />
       <Route path="/Product/:id/:num" element={<ProductDetailPage />} />
       <Route path="Login" element={<LoginPage />} />
-      <Route path="User" element={< PrivateRoute />} /> */}
+      <Route path="User" element={< PrivateRoute />} />
+      <Route path="/ZustandCount" element={<ZustandCount />} />
+       */}
     </Routes>
   );
 }
