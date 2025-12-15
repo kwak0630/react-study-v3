@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+
 import NavigationBar from '../componet/ProductNavigation'
 
-const ProductDetail = () => {
+const ProductDetail = ({ authenticate, setAuthenticate }) => {
   let {id} = useParams();
   const [product, setProduct] = useState(null);
 
@@ -19,7 +20,7 @@ const ProductDetail = () => {
 
   return (
     <div className='shop-wrap'>
-      <NavigationBar />
+      <NavigationBar authenticate={authenticate} setAuthenticate={setAuthenticate} />
       <div className='product-wrap'>
         <div className='product-detail'>
           <div className='product-img'>

@@ -16,7 +16,7 @@ import { useSearchParams } from 'react-router-dom';
 // 8. 로그인 / 로그아웃 버튼 텍스트 변경
 // 9. 상품 검색 기능
 
-const ProductIndex = () => {
+const ProductIndex = ({ authenticate, setAuthenticate }) => {
   const [productList, setProductList] = useState([]);
   const [query, setQuery] = useSearchParams();
 
@@ -42,9 +42,10 @@ const ProductIndex = () => {
   useEffect(() => {
     getProducts();
   }, [query])
+  
   return (
     <div className='shop-wrap'>
-      <NavigationBar />
+      <NavigationBar authenticate={authenticate} setAuthenticate={setAuthenticate} />
       <div className='product-wrap'>
         <div className='product-list'>
           <ul>

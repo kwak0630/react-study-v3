@@ -6,16 +6,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
-const ShopNavigation = (setAuthenticate) => {
+const ShopNavigation = ({ authenticate, setAuthenticate }) => {
 
   const gnbList = ['여성', '남성', '아동', '홈', '세일', '베스트'];
 
-  console.log("setAuthenticate", setAuthenticate)
   const navigate = useNavigate();
   const goToLogin = () => {
     navigate('/Login');
   }
+
   const goToLogout = () => {
+    setAuthenticate?.(false);
     navigate('/Product');
   }
 
@@ -44,13 +45,18 @@ const ShopNavigation = (setAuthenticate) => {
           </div>
         </div>
         <div className='util'>
-          {/* <Link to="/Login"><FontAwesomeIcon icon={faUser}/></Link> */}
           {
-
+            authenticate ? (
+              <button type="button" onClick={goToLogout} className="auth-logout">
+                <FontAwesomeIcon icon={faUser} style={{color: "#ffffff",}} />
+                
+              </button>
+            ) : (
+              <button type="button" onClick={goToLogin}>
+                <FontAwesomeIcon icon={faUser} />
+              </button>
+            )
           }
-          <button onClick={goToLogin}><FontAwesomeIcon icon={faUser}/>로그인</button>
-          <button onClick={goToLogout}><FontAwesomeIcon icon={faUser}/>로그아웃</button>
-          {/* <span>LOGIN</span> */}
         </div>
       </div>
 
@@ -61,7 +67,6 @@ const ShopNavigation = (setAuthenticate) => {
           ))}
         </ul>
       </div>
-
     </div>
   )
 }

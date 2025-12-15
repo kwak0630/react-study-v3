@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import NavigationBar from '../componet/ProductNavigation'
 import { useNavigate } from 'react-router-dom'
 
-const Login = () => {
+const Login = ({ authenticate, setAuthenticate }) => {
 
   const navigate = useNavigate();
 
@@ -11,20 +11,14 @@ const Login = () => {
     event.preventDefault();   // 3. form에서 event를 받아와서 뿌려준다 > 리프레시 막음. ** form 을 쓸 경우 event.preventDefault() 이거 꼭 사용!
     // console.log("login2")
 
-    setAuthenticate(true);
-    navigate('/Product') // 로그인이 된다면 메인 페이지로 이동
+    // setAuthenticate(true);
+    setAuthenticate?.(true);
+    navigate('/Product') // main 페이지로 이동
   }
   
-
-
-  const [authenticate, setAuthenticate] = useState(false);
-
-  useEffect(() => {
-    console.log(authenticate) //로그인 ture/false 확인!!!
-  },[authenticate]);
   return (
     <div className='shop-wrap'>
-      <NavigationBar authenticate={authenticate} />
+      <NavigationBar authenticate={authenticate} setAuthenticate={setAuthenticate} />
       {/* 1. form 안에 button 는 리프레시가 된다. type이 submit일 경우는 onClick 이벤트 안되고 onSubmit을 줘야함 */}
       <form onSubmit={(event) => loginUser(event)}>
         <div className='login-wrap'>

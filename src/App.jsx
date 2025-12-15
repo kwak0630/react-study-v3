@@ -19,7 +19,7 @@ function App() {
   const [authenticate, setAuthenticate] = useState(false);
 
   useEffect(() => {
-    // console.log(authenticate) //로그인 ture/false 확인!!!
+    console.log("authenticate", authenticate) //로그인 ture/false 확인!!!
   },[authenticate]);
 
   // 로그인 했을 때만 보여지게 redirect
@@ -33,7 +33,7 @@ function App() {
       <Route path="/" element={<Intro />} />
       <Route path="/RockScissorsPaper" element={<RockScissorsPaper />} />
       <Route path="/Weather" element={<Weather />} />
-      <Route path="/Product" element={<ProductIndex />} />
+      <Route path="/Product" element={<ProductIndex authenticate={authenticate} setAuthenticate={setAuthenticate} />} />
       <Route path="/Product/:id" element={<PrivateRoute authenticate={authenticate} />} />
       <Route path="/Login" element={<Login setAuthenticate={setAuthenticate} />} />
 
