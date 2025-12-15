@@ -1,5 +1,5 @@
 import React from 'react'
-import NavigationBar from '../componet/ProductNavigation'
+import NavigationBar from '../component/ProductNavigation'
 import { useNavigate } from 'react-router-dom'
 
 const Login = ({ authenticate, setAuthenticate }) => {

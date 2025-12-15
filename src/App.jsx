@@ -13,6 +13,7 @@ import ProductPage from "./productPage";
 import ProductDetailPage from "./productDetailPage";
 import LoginPage from "./LoginPage";
 import UserPage from "./UserPage";
+import ZustandCount from "./ZustandCount";
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
       <Route path="/Product/:id" element={<PrivateRoute authenticate={authenticate} />} />
       <Route path="/Login" element={<Login setAuthenticate={setAuthenticate} />} />
 
+      <Route path="/ZustandCount" element={<ZustandCount />} />
       {/* 이 아래는 테스트 라우터!
       <Route path="/Product" element={<ProductPage />} />
       <Route path="/Product/:id" element={<ProductDetailPage />} />

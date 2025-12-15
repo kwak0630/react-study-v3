@@ -1,5 +1,5 @@
 import { use, useState } from 'react'
-import Box from './componet/Box'
+import Box from './component/Box'
 import './App.css'
 
 // 가위바위보 게임 강의

@@ -1,6 +1,6 @@
 import React, { useEffect, useState, CSSProperties } from 'react'
-import WeatherBox from './componet/WeatherBox';
-import WeatherButton from './componet/WeatherButton';
+import WeatherBox from './component/WeatherBox';
+import WeatherButton from './component/WeatherButton';
 import { ClipLoader } from "react-spinners";
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';

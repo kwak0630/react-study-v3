@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 
-import NavigationBar from '../componet/ProductNavigation'
+import NavigationBar from '../component/ProductNavigation'
 
 const ProductDetail = ({ authenticate, setAuthenticate }) => {
   let {id} = useParams();

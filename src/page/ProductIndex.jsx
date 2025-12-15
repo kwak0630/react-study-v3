@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
-import NavigationBar from '../componet/ProductNavigation'
-import ProductItem from '../componet/ProductItem'
+import NavigationBar from '../component/ProductNavigation'
+import ProductItem from '../component/ProductItem'
 import { useSearchParams } from 'react-router-dom';
 
 // 쇼핑몰
