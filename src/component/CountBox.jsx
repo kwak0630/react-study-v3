@@ -1,8 +1,11 @@
 import React from 'react'
+import counterStore from '../stores/counterStore'
 
 const CountBox = () => {
+  const {count} = counterStore();
+  
   return (
-    <div>CountBox</div>
+    <div>CountBox {count}</div>
   )
 }
 
