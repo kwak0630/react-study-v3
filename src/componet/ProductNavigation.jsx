@@ -14,7 +14,6 @@ const ShopNavigation = ({ authenticate, setAuthenticate }) => {
   const goToLogin = () => {
     navigate('/Login');
   }
-
   const goToLogout = () => {
     setAuthenticate?.(false);
     navigate('/Product');
@@ -48,8 +47,7 @@ const ShopNavigation = ({ authenticate, setAuthenticate }) => {
           {
             authenticate ? (
               <button type="button" onClick={goToLogout} className="auth-logout">
-                <FontAwesomeIcon icon={faUser} style={{color: "#ffffff",}} />
-                
+                <FontAwesomeIcon icon={faUser} style={{color: "#ffffff"}} />
               </button>
             ) : (
               <button type="button" onClick={goToLogin}>
