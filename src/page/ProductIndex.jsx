@@ -31,7 +31,8 @@ const ProductIndex = ({ authenticate, setAuthenticate }) => {
     // 검색한 쿼리값까지 가져오는 방법
     let searchQuery = query.get('q') || ""; 
     // console.log(searchQuery);
-    let url = `http://localhost:4000/products/?q=${searchQuery}`
+    // let url = `http://localhost:4000/products/?q=${searchQuery}`
+    let url = `https://my-json-server.typicode.com/kwak0630/react-study-v3/products/?q=${searchQuery}`
     let response = await fetch(url)
     let data = await response.json();
     setProductList(data); // 데이터 넣기
@@ -42,7 +43,7 @@ const ProductIndex = ({ authenticate, setAuthenticate }) => {
   useEffect(() => {
     getProducts();
   }, [query])
-  
+
   return (
     <div className='shop-wrap'>
       <NavigationBar authenticate={authenticate} setAuthenticate={setAuthenticate} />
