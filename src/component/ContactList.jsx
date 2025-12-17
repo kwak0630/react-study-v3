@@ -1,11 +1,19 @@
 import React from 'react'
 import SearchIcon from '@mui/icons-material/Search';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import usePhoneBookStore from '../stores/usePhoneBookStore';
 
 const ContactList = () => {
 
-  const { phoneBook } = usePhoneBookStore();
-  console.log(phoneBook)
+  const { phoneBook, removeContact, removeAllContact } = usePhoneBookStore();
+  console.log(phoneBook);
+
+  const handleRemove = (id) => {
+    removeContact(id)
+  }
+  const handleAllRemove = () => {
+    removeAllContact()
+  }
   return (
     <div className='contact-list'>
     
@@ -18,12 +26,35 @@ const ContactList = () => {
       <div className='list-wrap'>
         <div className='top-box'>
           <span className='count'>총 {phoneBook?.length ?? 0} 명</span>
+          {phoneBook.length > 0 && 
+            <button className='all-delete' onClick={() => handleAllRemove()}>
+              전체삭제
+              <DeleteOutlineIcon 
+                sx={{ 
+                  fontSize: 16, 
+                  color: '#777',
+                  strokeWidth: 0.2, 
+                }} 
+              />
+            </button>
+          }
         </div>
         <ul className='list-box'>
           {phoneBook.map((item) => 
             <li key={item.id} className='list-item'>
               <span className='name'>{item.name}</span>
-              <span>{item.phoneNumber}</span>
+              <div className='phone'>
+                <span>{item.phoneNumber}</span>
+                <button onClick={() => handleRemove(item.id)}>
+                  <DeleteOutlineIcon 
+                    sx={{ 
+                      fontSize: 16, 
+                      color: '#777',
+                      strokeWidth: 0.2, 
+                    }} 
+                  />
+                </button>
+              </div>
             </li>
           )}
 

@@ -533,7 +533,13 @@
     }
     .list-wrap{
       margin-top: 48px;
+      button{
+        padding: 0;
+      }
       .top-box{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding-bottom: 8px;
         border-bottom: 1px solid #ddd;;
         .count{
@@ -541,6 +547,12 @@
           strong{
             font-weight: 700;
           }
+        }
+        .all-delete{
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 12px;
         }
       }
       .list-box{
@@ -557,6 +569,11 @@
           }
           .name{
             font-weight: 700;
+          }
+          .phone{
+            display: flex;
+            align-items: center;
+            gap: 8px;
           }
         }
         .nodata{
