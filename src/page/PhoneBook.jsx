@@ -22,7 +22,7 @@ const PhoneBook = () => {
               sx={{ color: '#000', bgcolor: 'rgba(0,0,0,0.5)', zIndex: (theme) => theme.zIndex.modal }}
             />
             <Box sx={{ position: 'fixed', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', zIndex: (theme) => theme.zIndex.modal + 1 }}>
-              <ContactForm />
+              <ContactForm onClose={() => setShowForm(false)} />
             </Box>
           </>
         )}

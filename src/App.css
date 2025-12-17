@@ -512,8 +512,10 @@
     }
   }
   .contact-list{
-
+    width: 100%;
     .search{
+      display: flex;
+      justify-content: center;
       .search-input{
         display: flex;
         align-items: center;
@@ -525,6 +527,41 @@
           flex: 1;
           border: 0;
           outline: 0;
+          font-size: 13px;
+        }
+      }
+    }
+    .list-wrap{
+      margin-top: 48px;
+      .top-box{
+        padding-bottom: 8px;
+        border-bottom: 1px solid #ddd;;
+        .count{
+          font-size: 12px;
+          strong{
+            font-weight: 700;
+          }
+        }
+      }
+      .list-box{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 24px;
+        .list-item{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          span{
+            font-size: 13px;
+          }
+          .name{
+            font-weight: 700;
+          }
+        }
+        .nodata{
+          padding: 200px 0 0;
+          text-align: center;
           font-size: 13px;
         }
       }
