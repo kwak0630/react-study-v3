@@ -15,6 +15,7 @@ import ProductDetailPage from "./productDetailPage";
 import LoginPage from "./LoginPage";
 import UserPage from "./UserPage";
 import ZustandCount from "./ZustandCount";
+import ReduxCount from "./ReduxCount";
 
 function App() {
 
@@ -49,6 +50,7 @@ function App() {
       <Route path="User" element={< PrivateRoute />} />
       <Route path="/ZustandCount" element={<ZustandCount />} />
        */}
+      <Route path="/ReduxCount" element={<ReduxCount />} />
     </Routes>
   );
 }
