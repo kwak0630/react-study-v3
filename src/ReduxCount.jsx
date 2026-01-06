@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import ReduxBox from './component/ReduxBox';
 
 const ReduxCount = () => {
 
@@ -7,7 +8,7 @@ const ReduxCount = () => {
   const dispatch = useDispatch();
 
   const increase = () => {
-    dispatch({ type: "INCREMENT"})
+    dispatch({ type: "INCREMENT", payload: {num : 5}}) // payload는 필요한 값! (함수의 매개변수 같은 개념)
   }
   const decreaase = () => {
     dispatch({ type: "DECREMENT"})
@@ -16,8 +17,10 @@ const ReduxCount = () => {
   return (
     <div className='zustand-wrap'>
       <h1>count: {count}</h1>
-      <button onClick={increase}>1씩 증가 +</button>
-      <button onClick={decreaase}>1씩 감소 -</button>
+      <button onClick={increase}>증가 +</button>
+      <button onClick={decreaase}>감소 -</button>
+
+      <ReduxBox />
     </div>
   )
 }

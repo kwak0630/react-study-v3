@@ -20,7 +20,9 @@ function reducer(state = initialState, action) {
   // switch문 버전
   switch(action.type) {
     case "INCREMENT" :
-      return { ...state, count: state.count + 1}
+      // return { ...state, count: state.count + 1}
+      // payload로 받은 데이터 사용 (5씩 증가)
+      return { ...state, count: state.count + action.payload.num}
     case "DECREMENT" :
       return { ...state, count: state.count - 1}
     default : 
